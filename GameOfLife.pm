@@ -258,7 +258,7 @@ sub sum_col {
 
 sub trim {
 	my $o = shift;
-	while (!$o->sum_row(0) && $o->row_count()){
+	while ($o->row_count() && !$o->sum_row(0)){
 		shift @{$o->{matrix}};
 	}
 	if(!$o->row_count()){
